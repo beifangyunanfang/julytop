@@ -1,30 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {hot} from 'react-hot-loader';
+import Router from './routers/index';
+import Home from './pages/home';
+import { AppContainer } from 'react-hot-loader';
 
-class App extends React.Component {
-    render(){
-        return(
-            <div>
-                这是啦啦啦啦
-            </div>
+
+
+
+if (module.hot) {
+    module.hot.accept(() => {
+        ReactDOM.render(
+            <AppContainer>
+                <Router />
+            </AppContainer>,
+            document.getElementById('root')
         )
-    }
+    })
 }
 
-export default hot(App)
 
 ReactDOM.render(
-    <App />,
+    <AppContainer>
+        <Router />
+    </AppContainer>,
     document.getElementById('root')
 )
-
-
-// // Hot Module Replacement API
-// if (module.hot) {
-//     module.hot.accept()
-// }
-
-
 
 
