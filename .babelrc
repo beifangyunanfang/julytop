@@ -1,3 +1,7 @@
 {
-  "plugins": ["react-hot-loader/babel"]   //热更新
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": ["react-hot-loader/babel"]
 }
