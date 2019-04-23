@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Router from './routers/index';
-import Home from './pages/home';
 import { AppContainer } from 'react-hot-loader';
 
 

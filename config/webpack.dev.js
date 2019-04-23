@@ -14,7 +14,7 @@ let config = {
     devServer: {
 
         contentBase: path.resolve(__dirname, '../dist'), // 用来指定被访问html页面所在目录的
-        publicPath: path.resolve(__dirname, '../dist'),
+        // publicPath: path.resolve(__dirname, '../dist'),
         host: 'localhost',
         port: 8888,
         open: true,   // 浏览器自动打开
@@ -22,7 +22,7 @@ let config = {
         //     index: 'index.html'
         // }
         hot: true,
-        inline: true
+        // inline: true
 
     }
 

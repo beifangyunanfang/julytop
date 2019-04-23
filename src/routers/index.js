@@ -8,12 +8,14 @@ import {HashRouter, Route, Switch} from 'react-router-dom';
 
 import Detail from '../pages/detail'
 import Home from '../pages/home'
+import ReactHot from '../pages/react'
 
 const Main = () => (
     <HashRouter>
         <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/detail" component={Detail}/>
+            <Route exact path="/react" component={ReactHot}/>
         </Switch>
     </HashRouter>
 )

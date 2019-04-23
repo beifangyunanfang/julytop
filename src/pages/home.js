@@ -8,7 +8,7 @@ class home extends React.Component {
     constructor(props) {
         super(props)
         this.state= {
-            name: '这是首页'
+            name: '这是首页243243234'
         }
     }
     handleClick(){
@@ -19,6 +19,7 @@ class home extends React.Component {
             <div className='getName'>
                 {this.state.name}
                 <button onClick={()=>this.handleClick()}>页面跳转</button>
+                <button onClick={()=>this.props.history.push({pathname:'/react'})}>调整react-增加插件react-hot-loader</button>
             </div>
         )
     }
