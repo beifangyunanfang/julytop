@@ -31,6 +31,8 @@ class ReactHot extends React.Component{
                 <p>如果不增加插件react-hot-loader,当页面热更新的时候，state里面的值不会保存。</p>
                 <p>babelrc增加，webpack-base.js增加，index.js 首页增加</p>
                 <p>网上还有增加热插件以后，没有效果，并没有复现</p>
+                <br/>
+                <p>增加react-hot-loader,不能更改constructor里面的值，可以更改props传进来的值</p>
             </div>
         )
     }
