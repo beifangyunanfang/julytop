@@ -29,7 +29,7 @@ let config = {
         historyApiFallback: true,
         // inline: true
 
-    }
+    },
 
 
 };

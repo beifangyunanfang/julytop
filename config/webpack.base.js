@@ -18,23 +18,28 @@ module.exports = {
     //     main: './src/index.js'
     //
     // },
-    entry: [
-        // // 开启react代码的模块热替换（HMR）
-        'react-hot-loader/patch',
-        // // 为webpack-dev-server的环境打包好运行代码
-        // // 然后连接到指定服务器域名与端口, 这里的端口为自己项目的端口
-        // 'webpack-dev-server/client?http://localhost:8888/',
-        // // 为热替换（HMR）打包好运行代码
-        // // only- 意味着只有成功更新运行代码才会执行热替换（HMR）
-        // 'webpack/hot/only-dev-server',
-        path.join(__dirname, '../src/index.js')
-    ],
+    // entry: [
+    //     // // 开启react代码的模块热替换（HMR）
+    //     'react-hot-loader/patch',
+    //     // // 为webpack-dev-server的环境打包好运行代码
+    //     // // 然后连接到指定服务器域名与端口, 这里的端口为自己项目的端口
+    //     // 'webpack-dev-server/client?http://localhost:8888/',
+    //     // // 为热替换（HMR）打包好运行代码
+    //     // // only- 意味着只有成功更新运行代码才会执行热替换（HMR）
+    //     // 'webpack/hot/only-dev-server',
+    //     path.join(__dirname, '../src/index.js')
+    // ],
+    entry:{
+        // vendor: ["jquery", "other-lib"],
+        app:path.join(__dirname, '../src/index.js')
+    },
+
     //出口文件
 
     output: {
 
         path: path.resolve(__dirname, '../dist'),
-        filename: "bundle.js",
+        filename: "bundle.[name].js",
         publicPath: "./"
 
     },
@@ -78,6 +83,7 @@ module.exports = {
         ]
     },
     plugins: [
+        // inject: true | 'head' | 'body' | false  ,注入所有的资源到特定的 template 或者 templateContent 中，如果设置为 true 或者 body，所有的 javascript 资源将被放置到 body 元素的底部，'head' 将放置到 head 元素中。
         new HtmlWebpackPlugin(
             {
                 filename: 'index.html',
@@ -86,13 +92,16 @@ module.exports = {
 
             }
         ),
-        // new webpack.HotModuleReplacementPlugin(),
-        // inject: true | 'head' | 'body' | false  ,注入所有的资源到特定的 template 或者 templateContent 中，如果设置为 true 或者 body，所有的 javascript 资源将被放置到 body 元素的底部，'head' 将放置到 head 元素中。
 
+        // new webpack.HotModuleReplacementPlugin(),
+
+        // 抽取css
         new MiniCssExtractPlugin({
             filename: "[name].css",
             chunkFilename: "[id].css"
-        })
+        }),
+
+
     ]
 
 
