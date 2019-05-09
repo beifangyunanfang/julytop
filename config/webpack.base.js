@@ -30,10 +30,11 @@ module.exports = {
         //     // 'webpack/hot/only-dev-server',
         //     path.join(__dirname, '../src/index.js')
         // ],
-        entry: {
+        entry: [
+            // "@babel/polyfill",
             // vendor: ["jquery", "other-lib"],
-            app: path.join(__dirname, '../src/index.js')
-        },
+            path.join(__dirname, '../src/index.js')
+        ],
 
         //出口文件
 
