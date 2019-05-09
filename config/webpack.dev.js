@@ -10,7 +10,7 @@ const baseConfig = require("./webpack.base.js");//基础配置
 let config = {
 
     mode: 'development',
-
+    devtool: 'cheap-module-source-map',
     devServer: {
 
         contentBase: path.resolve(__dirname, '../src'), // 用来指定被访问html页面所在目录的
@@ -29,7 +29,16 @@ let config = {
         historyApiFallback: true,
         // inline: true
 
+        proxy: {
+            "/pc/api": {
+                "target": "http://neiwangqa.baidu.com:8021",
+                "changeOrigin": true,
+                "pathRewrite": {"^/pc/api": "/pc/api"}
+            }
+        }
+
     },
+
 
 
 };

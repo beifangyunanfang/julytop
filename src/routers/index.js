@@ -3,34 +3,21 @@
  */
 
 import React from 'react'
-import {HashRouter, Route, Switch} from 'react-router-dom';
-// import {hot} from 'react-hot-loader';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import Detail from '../pages/detail'
-import Home from '../pages/home'
-import ReactHot from '../pages/react'
+import Home from '../pages/home';
+import Detail from '../pages/detail';
+import ReactHot from '../pages/react';
 
-const Main = () => (
-    <HashRouter>
-        <Switch>
+const Routes = () => (
+    <Router>
+        <div>
             <Route exact path="/" component={Home}/>
-            <Route exact path="/detail" component={Detail}/>
-            <Route exact path="/react" component={ReactHot}/>
-        </Switch>
-    </HashRouter>
+            <Route path="/about" component={Detail}/>
+        </div>
+    </Router>
 )
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <Main/>
-            </div>
-        )
-    }
-}
-
-// export default hot(App)
-export default App
+export default Routes;
 
 
