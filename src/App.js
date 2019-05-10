@@ -18,7 +18,7 @@ class App extends React.Component {
                 {/*<Provider {...stores}>*/}
                     {/*<Routes />*/}
                 {/*</Provider>*/}
-                这是是怎饿
+
             </div>
         );
     }

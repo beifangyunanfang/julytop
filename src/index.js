@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App'
+import { HashRouter } from 'react-router-dom'
+import Routers from './routers'
 import { AppContainer } from 'react-hot-loader';
 
 if (module.hot) {
@@ -12,6 +13,17 @@ if (module.hot) {
             document.getElementById('root')
         )
     })
+}
+
+
+class App extends React.Component {
+  render() {
+    return (
+      <HashRouter>
+        <Routers />
+      </HashRouter>
+    )
+  }
 }
 
 ReactDOM.render(
